@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈利波特小游戏-霍格沃茨魔法互动体验与游戏合集</title>
+    <meta name="description" content="哈利波特小游戏官网，提供正版授权的霍格沃茨魔法体验、魁地奇竞技、咒语对决及魔药调配等经典IP改编游戏。包含游戏下载、在线试玩、攻略指南及社区讨论。">
+    <meta name="keywords" content="哈利波特小游戏, 魔法游戏, 霍格沃茨, 魁地奇, 咒语对决, 魔药课, 哈利波特在线游戏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-dark: #0f0c29;
+            --primary-purple: #302b63;
+            --primary-blue: #24243e;
+            --accent-gold: #f1c40f;
+            --accent-red: #e74c3c;
+            --text-light: #ecf0f1;
+            --text-dim: #bdc3c7;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-purple), var(--primary-blue));
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-gold {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+
+        .btn-gold:hover {
+            background: #d4ac0d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 12, 41, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(48, 43, 99, 0.4) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: var(--glass-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        /* Featured Game Grid */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .game-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: var(--accent-gold);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            background-color: #333;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: var(--accent-gold);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            min-height: 3rem;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .card-actions .btn {
+            flex: 1;
+            font-size: 0.9rem;
+            padding: 0.4rem;
+        }
+
+        /* Features Section */
+        .features {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            padding: 4rem 0;
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .guide-item {
+            background: var(--glass-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .guide-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .guide-item p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+        }
+
+        .sidebar {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar a {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .sidebar a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            padding: 0 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1rem;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-light);
+        }
+
+        .faq-answer {
+            margin-top: 0.5rem;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            display: none; /* JS will toggle */
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item:not(.active) .faq-question::after {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 3rem 0;
+            margin-top: auto;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .copyright {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-dark);
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid var(--glass-border);
+            }
+
+            .nav-wrapper nav.active {
+                display: flex;
+            }
+
+            .nav-wrapper nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">🪄 霍格沃茨<span>游戏</span></a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#featured">热门推荐</a></li>
+                    <li><a href="#categories">游戏分类</a></li>
+                    <li><a href="#guide">新手指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div class="hero-tags">
+                <span class="tag">🧙‍♂️ 魔法冒险</span>
+                <span class="tag">⚽ 魁地奇</span>
+                <span class="tag">⚗️ 魔药课</span>
+                <span class="tag">⚔️ 咒语对决</span>
+            </div>
+            <h1>踏入霍格沃茨的魔法世界</h1>
+            <p>精选哈利波特系列小游戏，无论是体验魁地奇的极速飞驰，还是学习魔药调配的奥秘，在这里释放你的魔法潜能。</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="#featured" class="btn btn-gold">开始游戏</a>
+                <a href="#guide" class="btn btn-outline">阅读攻略</a>
+            </div>
+        </section>
+
+        <!-- Featured Games -->
+        <section id="featured" class="container">
+            <h2 class="section-title">热门哈利波特小游戏</h2>
+            <div class="games-grid">
+                <!-- Game 1 -->
+                <article class="game-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/quidditch/400/250" alt="魁地奇世界杯模拟器">
+                        <span class="card-badge">HOT</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">魁地奇世界杯模拟器</h3>
+                        <p class="card-desc">体验霍格沃茨校队的荣耀，操控飞天扫帚，躲避游走球，精准投球，赢得魁地奇世界杯冠军。</p>
+                        <div class="card-meta">
+                            <span>⚡ 极速操作</span>
+                            <span>👥 多人对战</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-gold">立即试玩</button>
+                            <button class="btn btn-outline">下载客户端</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 2 -->
+                <article class="game-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/potions/400/250" alt="魔药大师课">
+                        <span class="card-badge">NEW</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">魔药大师课</h3>
+                        <p class="card-desc">跟随斯内普教授的指导，收集神秘药草，按正确顺序混合材料，调制出完美的魔药。</p>
+                        <div class="card-meta">
+                            <span>🧪 智力解谜</span>
+                            <span>📚 知识学习</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-gold">开始调制</button>
+                            <button class="btn btn-outline">查看配方</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 3 -->
+                <article class="game-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/spells/400/250" alt="咒语对决竞技场">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">咒语对决竞技场</h3>
+                        <p class="card-desc">在禁林中与食死徒进行魔法决斗，合理使用如“除你武器”、“昏昏倒地”等经典咒语。</p>
+                        <div class="card-meta">
+                            <span>⚔️ 1v1 竞技</span>
+                            <span>🎯 反应测试</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-gold">加入战斗</button>
+                            <button class="btn btn-outline">英雄排行</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 4 -->
+                <article class="game-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/hogwarts/400/250" alt="霍格沃茨生活模拟">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">霍格沃茨生活模拟</h3>
+                        <p class="card-desc">从入学第一天开始，选择学院，学习课程，参加舞会，体验完整的巫师校园生活。</p>
+                        <div class="card-meta">
+                            <span>🏠 养成模拟</span>
+                            <span>🌈 角色扮演</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-gold">开始生活</button>
+                            <button class="btn btn-outline">剧情预告</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🧩</div>
+                        <h3 class="feature-title">益智解谜</h3>
+                        <p class="feature-text">结合魔法元素与逻辑推理，锻炼你的大脑，解开古老的魔法谜题。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏆</div>
+                        <h3 class="feature-title">公平竞技</h3>
+                        <p class="feature-text">实时匹配对手，无需付费即可获得顶级体验，公平公正的魔法对决。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3 class="feature-title">沉浸体验</h3>
+                        <p class="feature-text">还原电影级音效与画面，让你仿佛置身于神秘的魔法世界之中。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section container">
+            <h2 class="section-title">哈利波特小游戏攻略</h2>
+            <div class="guide-container">
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <h3>🎮 如何选择适合你的魔法游戏？</h3>
+                        <p>对于喜欢动作和反应的玩家，推荐尝试《咒语对决竞技场》或《魁地奇模拟器》；如果你更偏爱剧情和角色养成，那么《霍格沃茨生活模拟》将是不二之选。益智类玩家则可以在《魔药大师课》中寻找乐趣。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>🛡️ 网页游戏安全注意事项</h3>
+                        <p>在游玩哈利波特小游戏时，请确保通过官方渠道或可信的合作伙伴链接进入，避免下载来源不明的安装包。所有小游戏均经过安全检测，请放心游玩。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>⚡ 提升魔法熟练度的技巧</h3>
+                        <p>在竞技类游戏中，熟悉每个咒语的施放范围和冷却时间是获胜的关键。建议在“新手训练营”模式中反复练习，掌握预判技巧。</p>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <h3>📚 常用咒语指南</h3>
+                    <ul>
+                        <li><a href="#">阿瓦达索命 - 传说级</a></li>
+                        <li><a href="#">除你武器 - 基础控制</a></li>
+                        <li><a href="#">昏迷咒 - 战斗必备</a></li>
+                        <li><a href="#">飞来咒 - 拾取道具</a></li>
+                        <li><a href="#">荧光闪烁 - 照明工具</a></li>
+                    </ul>
+                    <br>
+                    <h3>🏆 排行榜</h3>
+                    <ul>
+                        <li><a href="#">魁地奇全球榜</a></li>
+                        <li><a href="#">魔药调配大师榜</a></li>
+                        <li><a href="#">咒语连招榜</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question">这些游戏需要付费吗？</div>
+                <div class="faq-answer">大部分哈利波特小游戏提供免费试玩版本，核心玩法完全免费。部分高级角色皮肤或特殊道具可能需要内购。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">游戏支持哪些设备？</div>
+                <div class="faq-answer">我们的游戏完美支持PC端浏览器、iOS手机及Android手机，无需下载APP，打开网页即可畅玩。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何加入霍格沃茨学院？</div>
+                <div class="faq-answer">在《霍格沃茨生活模拟》中，入学测试会根据你的性格测试结果自动分配学院（格兰芬多、斯莱特林、拉文克劳或赫奇帕奇）。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">🪄 霍格沃茨<span>游戏</span></div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">隐私政策</a>
+                <a href="#">用户协议</a>
+                <a href="#">联系客服</a>
+                <a href="#">加入公会</a>
+            </div>
+            <p class="copyright">© 2023 霍格沃茨游戏中心. 本站为粉丝自制演示页面，与J.K.罗琳或华纳兄弟无关。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('main-nav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
