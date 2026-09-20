@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="背光机械键盘选购指南，深度解析红轴、青轴、茶轴手感差异，RGB背光效果展示，以及客制化键帽搭配建议。提供品牌推荐与参数对比，助您找到最适合的游戏与办公键盘。">
+    <meta name="keywords" content="背光机械键盘,机械键盘,RGB键盘,客制化键盘,游戏键盘,键盘推荐">
+    <title>背光机械键盘-专业评测、选购指南与客制化搭配推荐</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-color: #1e293b;
+            --accent-color: #8b5cf6;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Kernels Guide */
+        .guide-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .kernel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .kernel-item {
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            transition: border-color 0.3s;
+        }
+
+        .kernel-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .kernel-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .kernel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .kernel-item h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .kernel-desc {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .kernel-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .kernel-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Product Showcase */
+        .products {
+            padding: 80px 0;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e2e8f0;
+        }
+
+        .product-info {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e0e7ff;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .product-specs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid #f3f4f6;
+            border-bottom: 1px solid #f3f4f6;
+            padding: 10px 0;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-light);
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Approximate height */
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #94a3b8;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+
+            .nav-wrapper {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span style="font-size: 1.8rem;">⌨️</span> 键盘大师
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#features">核心特性</a></li>
+                    <li><a href="#guide">轴体指南</a></li>
+                    <li><a href="#products">热门推荐</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">加入会员</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>探索背光机械键盘的极致手感</h1>
+                    <p>从RGB炫彩灯效到客制化轴体，我们为您深度解析如何选择最适合您的背光机械键盘，提升打字与游戏体验。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; md:justify-content: start;">
+                        <a href="#products" class="btn btn-primary">查看推荐型号</a>
+                        <a href="#guide" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">了解轴体知识</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/keyboardhero/600/400" alt="高端背光机械键盘展示" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">为什么选择背光机械键盘？</h2>
+                <p class="section-subtitle">背光机械键盘不仅提供舒适的打字手感，更通过炫酷的灯光效果成为桌面上的艺术品。</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>RGB 炫彩灯效</h3>
+                        <p>支持16.8百万色调节，内置多种预设灯光模式（流光溢彩、呼吸、波浪），让您的桌面在夜晚熠熠生辉。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>全键无冲</h3>
+                        <p>采用高精度霍尔开关或电容按键，确保在激烈的电竞游戏中，多键位同时按下时无延迟、无冲突。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>客制化外观</h3>
+                        <p>PBT热升华键帽、铝合金边框、磁吸防尘盖，支持官方固件升级，满足个性化定制需求。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>多设备连接</h3>
+                        <p>支持2.4G无线、蓝牙5.0与有线三种连接方式，一键切换，自动配对，告别线缆束缚。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kernel Guide -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <h2 class="section-title">轴体选择指南</h2>
+                <p class="section-subtitle">背光机械键盘的灵魂在于轴体，不同的轴体决定了按键的手感与声音。</p>
+
+                <div class="kernel-grid">
+                    <div class="kernel-item">
+                        <div class="kernel-header">
+                            <div class="kernel-dot" style="background-color: #ef4444;"></div>
+                            <h3>红轴</h3>
+                        </div>
+                        <p class="kernel-desc">直上直下，触感轻盈。没有段落感，按下去非常顺滑，声音较小。</p>
+                        <ul class="kernel-list">
+                            <li>适合：长时间办公、程序员、电竞游戏</li>
+                            <li>特点：静音、线性、无压力</li>
+                        </ul>
+                    </div>
+
+                    <div class="kernel-item">
+                        <div class="kernel-header">
+                            <div class="kernel-dot" style="background-color: #eab308;"></div>
+                            <h3>青轴</h3>
+                        </div>
+                        <p class="kernel-desc">段落感强，清脆响亮。按下时会有明显的“咔哒”声和触感反馈。</p>
+                        <ul class="kernel-list">
+                            <li>适合：追求打字快感、聊天、文字录入</li>
+                            <li>特点：噪音大、手感清晰、易疲劳</li>
+                        </ul>
+                    </div>
+
+                    <div class="kernel-item">
+                        <div class="kernel-header">
+                            <div class="kernel-dot" style="background-color: #22c55e;"></div>
+                            <h3>茶轴</h3>
+                        </div>
+                        <p class="kernel-desc">红轴的轻盈与青轴的段落感的平衡。既有一定的确认感，又不会过于生硬。</p>
+                        <ul class="kernel-list">
+                            <li>适合：办公与游戏兼顾、大多数用户</li>
+                            <li>特点：综合手感、适中段落、兼容性强</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase -->
+        <section id="products" class="products">
+            <div class="container">
+                <h2 class="section-title">热门背光机械键盘推荐</h2>
+                <p class="section-subtitle">精选市面上口碑极佳的背光机械键盘，涵盖入门到高端全价位段。</p>
+
+                <div class="feature-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <img src="https://picsum.photos/seed/mech1/400/250" alt="入门级背光键盘" class="product-img">
+                        <div class="product-info">
+                            <div class="product-tags">
+                                <span class="tag">红轴</span>
+                                <span class="tag">无线</span>
+                            </div>
+                            <h3 class="product-title">极光入门版机械键盘</h3>
+                            <div class="product-specs">
+                                <span>⌨️ 87键</span>
+                                <span>🔋 电池续航</span>
+                                <span>🎮 游戏模式</span>
+                            </div>
+                            <p class="product-desc">专为初学者设计，支持三模连接，RGB流光溢彩模式，性价比极高的入门级选择。</p>
+                            <div class="product-footer">
+                                <span class="price">¥299</span>
+                                <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem;">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <img src="https://picsum.photos/seed/mech2/400/250" alt="客制化机械键盘" class="product-img">
+                        <div class="product-info">
+                            <div class="product-tags">
+                                <span class="tag">青轴</span>
+                                <span class="tag">客制化</span>
+                            </div>
+                            <h3 class="product-title">幻影客制化机械键盘</h3>
+                            <div class="product-specs">
+                                <span>⌨️ 75%布局</span>
+                                <span>🎨 PBT键帽</span>
+                                <span>⏱️ 热插拔</span>
+                            </div>
+                            <p class="product-desc">支持热插拔轴体，PBT热升华键帽，铝合金机身，支持全键RGB自定义编程。</p>
+                            <div class="product-footer">
+                                <span class="price">¥599</span>
+                                <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem;">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <img src="https://picsum.photos/seed/mech3/400/250" alt="电竞机械键盘" class="product-img">
+                        <div class="product-info">
+                            <div class="product-tags">
+                                <span class="tag">黑轴</span>
+                                <span class="tag">电竞</span>
+                            </div>
+                            <h3 class="product-title">狂暴电竞机械键盘</h3>
+                            <div class="product-specs">
+                                <span>⌨️ 104键</span>
+                                <span>⚡ 8000万次寿命</span>
+                                <span>🔗 全键无冲</span>
+                            </div>
+                            <p class="product-desc">专为FPS游戏优化，超低延迟响应，RGB幻彩背光，PBT耐磨键帽。</p>
+                            <div class="product-footer">
+                                <span class="price">¥899</span>
+                                <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem;">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">背光机械键盘对办公有影响吗？</div>
+                        <div class="faq-answer">
+                            <p>背光功能本身不会影响办公效率。青轴键盘因为声音较大，可能会对需要安静环境的同事造成干扰；而红轴或茶轴则更适合办公环境。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何保养PBT键帽？</div>
+                        <div class="faq-answer">
+                            <p>PBT键帽比ABS键帽更耐磨且不易打油。建议定期用软毛刷清理键帽缝隙的灰尘，清洗时可用中性洗涤剂浸泡，切勿使用强酸强碱清洁剂。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">三模连接的键盘如何切换设备？</div>
+                        <div class="faq-answer">
+                            <p>通常键盘上会有物理按键（如Fn+数字键或专门的切换键）来切换蓝牙配对设备。连接电脑后，可以通过驱动软件进行更细致的灯光和宏设置。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>键盘大师致力于为数码爱好者提供最专业的机械键盘选购指南与评测内容。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">品牌大全</a></li>
+                        <li><a href="#">轴体详解</a></li>
+                        <li><a href="#">键帽图鉴</a></li>
+                        <li><a href="#">最新评测</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">购买指南</a></li>
+                        <li><a href="#">保修政策</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">隐私条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p>订阅邮件获取最新键盘资讯与优惠信息。</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 键盘大师. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
